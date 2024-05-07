@@ -4,10 +4,11 @@ import (
 	"UniProxy/common/encrypt"
 	"UniProxy/proxy"
 	"UniProxy/v2b"
-	"github.com/gin-gonic/gin"
-	log "github.com/sirupsen/logrus"
 	"os"
 	"path"
+
+	"github.com/gin-gonic/gin"
+	log "github.com/sirupsen/logrus"
 )
 
 type initParamsRequest struct {
@@ -21,6 +22,9 @@ type initParamsRequest struct {
 
 var inited bool
 
+func InitParamsManual() {
+
+}
 func InitParams(c *gin.Context) {
 	p := initParamsRequest{}
 	err := c.ShouldBindJSON(&p)
