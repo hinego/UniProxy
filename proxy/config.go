@@ -41,6 +41,8 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 			},
 			Stack: "gvisor",
 		}
+		in.TunOptions.InboundOptions.SniffEnabled = true
+		in.TunOptions.InboundOptions.SniffOverrideDestination = true
 	} else {
 		in.Type = "mixed"
 		addr, _ := netip.ParseAddr("127.0.0.1")
@@ -197,6 +199,7 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 		return option.Options{}, fmt.Errorf("get rules error: %s", err)
 	}
 	return option.Options{
+
 		Log: &option.LogOptions{
 			Output: path.Join(DataPath, "proxy.log"),
 		},
@@ -230,6 +233,7 @@ func getRules(global bool) (*option.RouteOptions, error) {
 				DownloadURL: ResUrl + "/geosite.db",
 				Path:        path.Join(DataPath, "geosite.dat"),
 			},
+			AutoDetectInterface: true,
 		}
 		r.Rules = []option.Rule{
 			{

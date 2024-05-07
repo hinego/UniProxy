@@ -4,10 +4,7 @@ import (
 	"UniProxy/geo"
 	"UniProxy/handle"
 	"UniProxy/middleware"
-	"UniProxy/proxy"
 	"fmt"
-	"log"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,16 +18,16 @@ func Init() {
 	handle.InitParams2()
 	handle.GetServers2()
 	handle.StartUniProxy2()
-	go func() {
-		for i := range 20 {
-			time.Sleep(1 * time.Second)
-			log.Println("wait...", i)
-		}
-		if proxy.Running {
-			proxy.StopProxy()
-		}
-		log.Println("stoped")
-	}()
+	// go func() {
+	// 	for i := range 20 {
+	// 		time.Sleep(1 * time.Second)
+	// 		log.Println("wait...", i)
+	// 	}
+	// 	if proxy.Running {
+	// 		proxy.StopProxy()
+	// 	}
+	// 	log.Println("stoped")
+	// }()
 }
 
 func loadRoute() {
