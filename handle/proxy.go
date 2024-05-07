@@ -2,7 +2,9 @@ package handle
 
 import (
 	"UniProxy/proxy"
+
 	"github.com/gin-gonic/gin"
+	"github.com/gogf/gf/v2/encoding/gjson"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -12,17 +14,31 @@ type StartUniProxyRequest struct {
 	GlobalMode bool   `json:"global_mode"`
 }
 
-func StartUniProxy(c *gin.Context) {
-	p := StartUniProxyRequest{}
-	err := c.ShouldBindJSON(&p)
-	if err != nil {
-		c.JSON(400, Rsp{
-			Success: false,
-		})
-		return
+func StartUniProxy2() {
+	p := StartUniProxyRequest{
+		Tag:        "shadowsocks_1",
+		Uuid:       "72493186-abeb-479d-982c-b7dd7a0afc6d",
+		GlobalMode: true,
 	}
 	proxy.GlobalMode = p.GlobalMode
-	err = proxy.StartProxy(p.Tag, p.Uuid, servers[p.Tag])
+	log.Println(gjson.MustEncodeString(p))
+	log.Println(servers)
+	err := proxy.StartProxy(p.Tag, p.Uuid, servers[p.Tag])
+	if err != nil {
+		log.Error("start proxy error: ", err)
+		return
+	}
+}
+func StartUniProxy(c *gin.Context) {
+	p := StartUniProxyRequest{
+		Tag:        "shadowsocks_1",
+		Uuid:       "72493186-abeb-479d-982c-b7dd7a0afc6d",
+		GlobalMode: true,
+	}
+	proxy.GlobalMode = p.GlobalMode
+	log.Println(gjson.MustEncodeString(p))
+	log.Println(servers)
+	err := proxy.StartProxy(p.Tag, p.Uuid, servers[p.Tag])
 	if err != nil {
 		log.Error("start proxy error: ", err)
 		c.JSON(400, Rsp{
@@ -41,7 +57,6 @@ func StartUniProxy(c *gin.Context) {
 			SystemProxy: proxy.SystemProxy,
 		},
 	})
-	return
 }
 
 func StopUniProxy(c *gin.Context) {

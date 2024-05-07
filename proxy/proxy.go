@@ -11,7 +11,7 @@ var (
 	Running     bool
 	SystemProxy bool
 	GlobalMode  bool
-	TunMode     bool
+	TunMode     bool = true
 	InPort      int
 	DataPath    string
 	ResUrl      string
