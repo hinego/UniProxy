@@ -11016,3 +11016,55 @@ INFO [3575122693 0ms] inbound/tun[0]: inbound packet connection to [fdfe:dcba:98
 DEBUG [3575122693 0ms] router: sniffed packet protocol: dns
 INFO [3575122693 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
 INFO [3575122693 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [4210397127 0ms] inbound/tun[0]: inbound packet connection from [fdfe:dcba:9876::1]:51390
+INFO [4210397127 0ms] inbound/tun[0]: inbound packet connection to [fdfe:dcba:9876::2]:53
+DEBUG [4210397127 0ms] router: sniffed packet protocol: dns
+INFO [4210397127 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [4210397127 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [1658253048 0ms] inbound/tun[0]: inbound packet connection from [fdfe:dcba:9876::1]:53917
+INFO [1658253048 0ms] inbound/tun[0]: inbound packet connection to [fdfe:dcba:9876::2]:53
+DEBUG [1658253048 0ms] router: sniffed packet protocol: dns
+INFO [1658253048 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [1658253048 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [3780555095 0ms] inbound/tun[0]: inbound packet connection from 172.19.0.1:57343
+INFO [3780555095 0ms] inbound/tun[0]: inbound packet connection to 172.19.0.2:53
+DEBUG [3780555095 0ms] router: sniffed packet protocol: dns
+INFO [3780555095 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [3780555095 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [143891932 0ms] inbound/tun[0]: inbound packet connection from 172.19.0.1:51390
+INFO [143891932 0ms] inbound/tun[0]: inbound packet connection to 172.19.0.2:53
+DEBUG [143891932 0ms] router: sniffed packet protocol: dns
+INFO [143891932 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [143891932 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [1934877389 0ms] inbound/tun[0]: inbound packet connection from 172.19.0.1:53917
+INFO [1934877389 0ms] inbound/tun[0]: inbound packet connection to 172.19.0.2:53
+DEBUG [1934877389 0ms] router: sniffed packet protocol: dns
+INFO [1934877389 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [1934877389 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+DEBUG [2614132427 13.1s] inbound/tun[0]: connection closed: upload: read udp 172.19.0.2:53: i/o timeout | download: raw-read udp 192.168.1.170:50280->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [3887677172 14.1s] inbound/tun[0]: connection closed: upload: read udp [fdfe:dcba:9876::2]:53: i/o timeout | download: raw-read udp 192.168.1.170:50279->192.168.1.91:555: use of closed network connection | upstream: context canceled
+INFO [2590826546 0ms] inbound/tun[0]: inbound packet connection from [fdfe:dcba:9876::1]:63107
+INFO [2590826546 0ms] inbound/tun[0]: inbound packet connection to [fdfe:dcba:9876::2]:53
+DEBUG [2590826546 0ms] router: sniffed packet protocol: dns
+INFO [2590826546 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+INFO [2590826546 0ms] outbound/shadowsocks[p]: outbound packet connection to [fdfe:dcba:9876::2]:53
+DEBUG [1547050687 18.3s] inbound/tun[0]: connection closed: upload: read udp [fdfe:dcba:9876::2]:53: i/o timeout | download: raw-read udp 192.168.1.170:61679->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [2913640593 17.2s] inbound/tun[0]: connection closed: upload: read udp 172.19.0.2:53: i/o timeout | download: raw-read udp 192.168.1.170:61682->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [2456507478 17.2s] inbound/tun[0]: connection closed: upload: read udp 172.19.0.2:53: i/o timeout | download: raw-read udp 192.168.1.170:61681->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [2605614047 18.3s] inbound/tun[0]: connection closed: upload: read udp [fdfe:dcba:9876::2]:53: i/o timeout | download: raw-read udp 192.168.1.170:61680->192.168.1.91:555: use of closed network connection | upstream: context canceled
+INFO [2591963598 0ms] inbound/tun[0]: inbound packet connection from 172.19.0.1:63107
+INFO [2591963598 0ms] inbound/tun[0]: inbound packet connection to 172.19.0.2:53
+DEBUG [2591963598 0ms] router: sniffed packet protocol: dns
+INFO [2591963598 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+INFO [2591963598 0ms] outbound/shadowsocks[p]: outbound packet connection to 172.19.0.2:53
+DEBUG [3227933152 18.4s] inbound/tun[0]: connection closed: upload: read udp [fdfe:dcba:9876::2]:53: i/o timeout | download: raw-read udp 192.168.1.170:64721->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [2925914721 17.3s] inbound/tun[0]: connection closed: upload: read udp 172.19.0.2:53: i/o timeout | download: raw-read udp 192.168.1.170:64722->192.168.1.91:555: use of closed network connection | upstream: context canceled
+DEBUG [2590826546 4.75s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:65106->192.168.1.91:555: use of closed network connection
+DEBUG [3780555095 12.51s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:63565->192.168.1.91:555: use of closed network connection
+DEBUG [2591963598 3.75s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:65107->192.168.1.91:555: use of closed network connection
+DEBUG [1658253048 13.22s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:63564->192.168.1.91:555: use of closed network connection
+DEBUG [4210397127 13.22s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:63563->192.168.1.91:555: use of closed network connection
+DEBUG [3575122693 13.52s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:53264->192.168.1.91:555: use of closed network connection
+DEBUG [3400100097 44.23s] inbound/tun[0]: connection closed: upload: read tcp 192.168.20.47:7680: operation aborted | download: read tcp 192.168.1.170:55817->192.168.1.91:555: use of closed network connection
+DEBUG [143891932 12.22s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:63566->192.168.1.91:555: use of closed network connection
+DEBUG [1934877389 12.22s] inbound/tun[0]: connection closed: upload: EOF | download: raw-read udp 192.168.1.170:63567->192.168.1.91:555: use of closed network connection
