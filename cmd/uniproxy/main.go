@@ -6,12 +6,16 @@ import (
 	"flag"
 	"log"
 	"strconv"
+
+	"github.com/gogf/gf/v2/os/gfile"
 )
 
 var host = flag.String("host", "127.0.0.1", "host")
 var port = flag.Int("port", 33212, "port")
 
 func main() {
+	gfile.Remove("uniproxy.log")
+	gfile.Remove("proxy.log")
 	flag.Parse()
 	proxy.ResUrl = "http://127.0.0.1:" + strconv.Itoa(*port)
 	router.Init()

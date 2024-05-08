@@ -10,6 +10,7 @@ require (
 	github.com/gogf/gf/v2 v2.7.0
 	github.com/sagernet/sing v0.4.0-beta.18
 	github.com/sagernet/sing-box v1.8.12
+	github.com/sagernet/sing-dns v0.2.0-beta.16
 	github.com/sirupsen/logrus v1.9.3
 )
 
@@ -42,11 +43,9 @@ require (
 	github.com/onsi/ginkgo/v2 v2.17.2 // indirect
 	github.com/oschwald/maxminddb-golang v1.12.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
-	github.com/sagernet/bbolt v0.0.0-20231014093535-ea5cb2fe9f0a // indirect
 	github.com/sagernet/gvisor v0.0.0-20240428053021-e691de28565f // indirect
 	github.com/sagernet/netlink v0.0.0-20220905062125-8043b4a9aa97 // indirect
 	github.com/sagernet/quic-go v0.43.0-beta.3 // indirect
-	github.com/sagernet/sing-dns v0.2.0-beta.16 // indirect
 	github.com/sagernet/sing-shadowsocks2 v0.2.0 // indirect
 	github.com/sagernet/sing-tun v0.2.8-beta.1 // indirect
 	github.com/sagernet/tfo-go v0.0.0-20231209031829-7b5343ac1dc6 // indirect
