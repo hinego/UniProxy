@@ -14,6 +14,7 @@ var host = flag.String("host", "127.0.0.1", "host")
 var port = flag.Int("port", 33212, "port")
 
 func main() {
+	log.SetFlags(log.Llongfile | log.Ldate | log.Ltime)
 	gfile.Remove("uniproxy.log")
 	gfile.Remove("proxy.log")
 	flag.Parse()

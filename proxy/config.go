@@ -23,8 +23,9 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 			Inet4Address: option.Listable[netip.Prefix]{
 				netip.MustParsePrefix("172.19.0.1/24"),
 			},
-			MTU:       9000,
-			AutoRoute: true,
+			InterfaceName: "KeyLink",
+			MTU:           9000,
+			AutoRoute:     true,
 			// StrictRoute: true,
 			Inet4RouteAddress: option.Listable[netip.Prefix]{
 				netip.MustParsePrefix("0.0.0.0/1"),
@@ -63,8 +64,8 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 		Tag:  "p",
 		ShadowsocksOptions: option.ShadowsocksOutboundOptions{
 			ServerOptions: option.ServerOptions{
-				Server:     "205.198.65.196",
-				ServerPort: 37999,
+				Server:     "120.232.240.44",
+				ServerPort: 13124,
 			},
 			Password: "123456",
 			Method:   "chacha20-ietf-poly1305",
@@ -80,15 +81,9 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 	return option.Options{
 		DNS: &option.DNSOptions{
 			Servers: []option.DNSServerOptions{
-				// {
-				// 	Tag:      "dns_proxy",
-				// 	Address:  "223.5.5.5",
-				// 	Strategy: option.DomainStrategy(dns.DomainStrategyPreferIPv4),
-				// 	Detour:   "d",
-				// },
 				{
 					Tag:      "dns_proxy",
-					Address:  "1.0.0.1",
+					Address:  "1.1.1.1",
 					Strategy: option.DomainStrategy(dns.DomainStrategyPreferIPv4),
 					Detour:   "p",
 				},
@@ -113,8 +108,8 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 		Outbounds: []option.Outbound{
 			out,
 			{
-				Tag:  "d",
-				Type: "direct",
+				Tag:  "dns",
+				Type: "dns",
 			},
 		},
 		Route: r,
@@ -122,42 +117,20 @@ func GetSingBoxConfig(uuid string, server *v2b.ServerInfo) (option.Options, erro
 }
 
 func getRules(global bool) (*option.RouteOptions, error) {
-	var r option.RouteOptions
-	if !global {
-		err := checkRes(DataPath)
-		if err != nil {
-			return nil, fmt.Errorf("check res err: %s", err)
-		}
-		r = option.RouteOptions{
-			GeoIP: &option.GeoIPOptions{
-				DownloadURL: ResUrl + "/geoip.db",
-				Path:        path.Join(DataPath, "geoip.dat"),
-			},
-			Geosite: &option.GeositeOptions{
-				DownloadURL: ResUrl + "/geosite.db",
-				Path:        path.Join(DataPath, "geosite.dat"),
-			},
-			AutoDetectInterface: true,
-		}
-		r.Rules = []option.Rule{
+	var r = option.RouteOptions{
+		Rules: []option.Rule{
 			{
 				Type: C.RuleTypeDefault,
 				DefaultOptions: option.DefaultRule{
-					GeoIP: option.Listable[string]{
-						"private",
+					Outbound: "dns",
+					Protocol: []string{
+						"dns",
 					},
-					// Geosite: option.Listable[string]{
-					// 	"cn",
-					// },
-					Outbound: "d",
 				},
 			},
-		}
-		return &r, nil
-	} else {
-		r = option.RouteOptions{
-			AutoDetectInterface: true,
-		}
+		},
+		Final:               "p",
+		AutoDetectInterface: true,
 	}
 	return &r, nil
 }
