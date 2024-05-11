@@ -10,7 +10,7 @@ type (
 		Name string  `json:"name"`
 		Data []*Node ``
 	}
-	Version struct { // 每次打开App时，如果发现有新版本，就弹出提示框
+	VersionRes struct { // 每次打开App时，如果发现有新版本，就弹出提示框
 		Current string // decimal 类型 例如： 3.66 只有一个小数点
 		Latest  string // 同上
 		Name    string // 新版本名称

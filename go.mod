@@ -2,7 +2,7 @@ module UniProxy
 
 go 1.22.1
 
-replace github.com/sagernet/sing-box v1.8.12 => ../Mybox/sing-box
+replace github.com/sagernet/sing-box v1.8.12 => /opt/temp/sing-box
 
 require (
 	github.com/gin-gonic/gin v1.9.1
